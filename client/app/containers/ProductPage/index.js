@@ -8,6 +8,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { NumericFormat } from 'react-number-format';
 
 import actions from '../../actions';
 
@@ -101,7 +102,13 @@ class ProductPage extends React.PureComponent {
                         </p>
                       )}
                       <p className='item-desc'>{product.description}</p>
-                      <p className='price'>${product.price}</p>
+                      <p className='price'>
+                      <NumericFormat value={product.price}
+                      displayType="text"
+                      allowLeadingZeros
+                      thousandSeparator=","
+                      renderText={(value) => <span className='price'>{value}</span>}/> VND
+                      </p>
                     </div>
                     <div className='item-customize'>
                       <Input

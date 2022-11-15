@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import { NumericFormat } from 'react-number-format';
 
 import { Link } from 'react-router-dom';
 
@@ -58,7 +59,13 @@ const ProductList = props => {
                     </div>
                   </div>
                   <div className='d-flex flex-row justify-content-between align-items-center px-4 mb-2 item-footer'>
-                    <p className='price mb-0'>${product.price}</p>
+                  <p className='price'>
+                      <NumericFormat value={product.price}
+                      displayType="text"
+                      allowLeadingZeros
+                      thousandSeparator=","
+                      renderText={(value) => <span  className='price mb-0'>{value}</span>}/> VND
+                      </p>
                     {product.totalReviews > 0 && (
                       <p className='mb-0'>
                         <span className='fs-16 fw-normal mr-1'>

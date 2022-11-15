@@ -6,7 +6,7 @@ An ecommerce store built with MERN stack, and utilizes third party API's. This e
 
 1. Buyers browse the store categories, products and brands
 2. Sellers or Merchants manage their own brand component
-3. Admins manage and control the entire store components 
+3. Admins manage and control the entire store components
 
 
 * features:
@@ -19,10 +19,10 @@ An ecommerce store built with MERN stack, and utilizes third party API's. This e
 
 
 ## Database Seed
-
+anhthang764@gmail.com
 * The seed command will create an admin user in the database
 * The email and password are passed with the command as arguments
-* Like below command, replace brackets with email and password. 
+* Like below command, replace brackets with email and password.
 * For more information, see code [here](server/utils/seed.js)
 
 ```
@@ -102,7 +102,7 @@ $ npm start
 - Add a `.vscode` directory
 - Create a file `settings.json` inside `.vscode`
 - Install Prettier - Code formatter in VSCode
-- Add the following snippet:  
+- Add the following snippet:
 
 ```json
 

@@ -53,7 +53,7 @@ CarouselSlider.defaultProps = {
   autoPlay: false,
   keyBoardControl: true,
   ssr: false,
-  autoPlaySpeed: 2000
+  autoPlaySpeed: 4000
 };
 
 export default CarouselSlider;

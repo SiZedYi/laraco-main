@@ -17,7 +17,7 @@
   border-bottom: $border-primary;
 
   .logo {
-    font-size: $font-size-heading-large !important;
+    font-size: 23px !important;
     font-weight: $font-weight-medium;
   }
 }
@@ -36,7 +36,7 @@
   // margin-top: 10px;
   // margin-bottom: 10px;
   // height: 95px;
-  padding: 16px 0px;
+  padding: 20px 0px;
 
   @include media-breakpoint-up(lg) {
     // height: 60px;

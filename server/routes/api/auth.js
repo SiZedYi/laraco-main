@@ -320,7 +320,7 @@ router.get(
         // Redirect browser to root of application
         window.location.href = '/auth/success';
       </script>
-    </html>       
+    </html>
     `;
 
       res.send(htmlWithEmbeddedJWT);
@@ -358,7 +358,7 @@ router.get(
         // Redirect browser to root of application
         window.location.href = '/auth/success';
       </script>
-    </html>       
+    </html>
     `;
 
       res.send(htmlWithEmbeddedJWT);

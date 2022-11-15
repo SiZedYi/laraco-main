@@ -10,22 +10,30 @@ import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 
 import actions from '../../actions';
+import ProductList from '../../components/Store/ProductList';
 import banners from './banners.json';
 import CarouselSlider from '../../components/Common/CarouselSlider';
 import { responsiveOneItemCarousel } from '../../components/Common/CarouselSlider/utils';
 
 class Homepage extends React.PureComponent {
+
   render() {
+    const { products, isLoading, authenticated, updateWishlist } = this.props;
+    const displayProducts = products && products.length > 0;
+
     return (
       <div className='homepage'>
+        {/* Test */}
         <Row className='flex-row'>
-          <Col xs='12' lg='6' className='order-lg-2 mb-3 px-3 px-md-2'>
+        <Col xs='12' lg='1' className='order-lg-1 mb-3 px-3 px-md-2'></Col>
+          <Col xs='12' lg='1' className='order-lg-3 mb-3 px-3 px-md-2'></Col>
+          <Col xs='12' lg='10' className='order-lg-2 mb-3 px-3 px-md-2'>
             <div className='home-carousel'>
               <CarouselSlider
                 swipeable={true}
                 showDots={true}
                 infinite={true}
-                autoPlay={false}
+                autoPlay={true}
                 slides={banners}
                 responsive={responsiveOneItemCarousel}
               >
@@ -35,26 +43,34 @@ class Homepage extends React.PureComponent {
               </CarouselSlider>
             </div>
           </Col>
-          <Col xs='12' lg='3' className='order-lg-1 mb-3 px-3 px-md-2'>
-            <div className='d-flex flex-column h-100 justify-content-between'>
-              <img src='/images/banners/banner-2.jpg' className='mb-3' />
-              <img src='/images/banners/banner-5.jpg' />
-            </div>
-          </Col>
-          <Col xs='12' lg='3' className='order-lg-3 mb-3 px-3 px-md-2'>
-            <div className='d-flex flex-column h-100 justify-content-between'>
-              <img src='/images/banners/banner-2.jpg' className='mb-3' />
-              <img src='/images/banners/banner-6.jpg' />
-            </div>
-          </Col>
         </Row>
+        <Row className='flex-row'>
+          <span style={{marginBottom: 50}}></span>
+        </Row>
+        {/* Products */}
+                  {/* CHƯA HOÀN THÀNH  */}
+
+        <div className='products-shop'>
+          {isLoading && <LoadingIndicator />}
+          {displayProducts && (
+          <ProductList
+            products={products}
+            authenticated={authenticated}
+            updateWishlist={updateWishlist}
+          />
+        )}
+        </div>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    products: state.product.storeProducts,
+    isLoading: state.product.isLoading,
+    authenticated: state.authentication.authenticated
+  };
 };
 
 export default connect(mapStateToProps, actions)(Homepage);

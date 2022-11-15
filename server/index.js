@@ -40,7 +40,7 @@ if (process.env.NODE_ENV === 'production') {
 const server = app.listen(port, () => {
   console.log(
     `${chalk.green('✓')} ${chalk.blue(
-      `Listening on port ${port}. Visit http://localhost:${port}/ in your browser.`
+      `Listening on port ${port}.(SERVER) Visit http://localhost:${port}/ in your browser.`
     )}`
   );
 });
